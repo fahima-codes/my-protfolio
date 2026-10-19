@@ -54,16 +54,17 @@ export interface Testimonial {
 
 export const portfolioData = {
   personal: {
-    name: "Developer Portfolio",
+    name: "Saniya Fahima",
     headline: "Full-Stack / MERN Developer",
     tagline: "Architecting high-performance web applications, scalable REST APIs, and delightful user experiences.",
     status: "Available for Hire & Freelance Projects",
     statusAvailable: true,
-    location: "Dhaka, Bangladesh (Open to Remote Worldwide)",
-    email: "developer@example.com",
-    phone: "+880 1700-000000",
+    location: "Sylhet, Bangladesh",
+    email: "fahimasaniya8@gmail.com",
+    phone: "+880 1924-018106",
+    avatar: "/saniya.jpg",
     resumeUrl: "#contact",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/fahima-codes",
     linkedinUrl: "https://linkedin.com",
     twitterUrl: "https://twitter.com",
     stats: [

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { portfolioData } from "@/data/portfolioData";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
 import {
@@ -120,9 +121,37 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Interactive Code Terminal Card */}
-          <div className="lg:col-span-5">
-            <div className="relative mx-auto max-w-lg">
+          {/* Right Column: Profile Avatar & Interactive Code Terminal Card */}
+          <div className="lg:col-span-5 flex flex-col items-center">
+            {/* Premium Round Avatar Showcase */}
+            <div className="relative mb-6 sm:mb-8 group">
+              {/* Radiant Ambient Glow Behind Avatar */}
+              <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-cyan-400 opacity-60 blur-xl group-hover:opacity-90 group-hover:blur-2xl transition-all duration-500" />
+              
+              {/* Outer decorative ring */}
+              <div className="relative p-1 rounded-full bg-gradient-to-tr from-white/90 via-indigo-200/50 to-white/90 shadow-2xl shadow-indigo-950/80">
+                {/* Round Shape Image with White Border and Shadow */}
+                <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-slate-900">
+                  <Image
+                    src="/saniya.jpg"
+                    alt={personal.name}
+                    width={220}
+                    height={220}
+                    priority
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              </div>
+
+              {/* Status Badge */}
+              <div className="absolute bottom-1 right-2 sm:bottom-2 sm:right-3 flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/95 border border-emerald-500/40 text-emerald-400 text-xs font-semibold shadow-lg backdrop-blur-md">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Open for Work</span>
+              </div>
+            </div>
+
+            {/* Interactive Code Terminal Card */}
+            <div className="relative w-full mx-auto max-w-lg">
               {/* Decorative gradient border wrap */}
               <div className="rounded-2xl p-0.5 bg-gradient-to-br from-indigo-500/40 via-purple-500/20 to-cyan-500/40 shadow-2xl shadow-indigo-950/60">
                 <div className="rounded-[15px] bg-[#0c1222] p-5 sm:p-6 border border-slate-800/80">
@@ -146,6 +175,9 @@ export default function Hero() {
                   <div className="font-mono text-xs sm:text-sm text-slate-300 space-y-1.5 overflow-x-auto leading-relaxed">
                     <p className="text-slate-400">
                       <span className="text-purple-400">const</span> developer = &#123;
+                    </p>
+                    <p className="pl-4">
+                      name: <span className="text-cyan-300">&quot;{personal.name}&quot;</span>,
                     </p>
                     <p className="pl-4">
                       role: <span className="text-emerald-300">&quot;Full-Stack / MERN Developer&quot;</span>,
