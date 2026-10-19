@@ -1,34 +1,76 @@
-# 🚀 Modern Full-Stack / MERN Developer Portfolio
+# Saniya Fahima - MERN Stack Developer Portfolio
 
-An ultra-sleek, responsive, and production-ready portfolio built with **Next.js 15 (App Router)**, **React 19**, **Tailwind CSS**, and **TypeScript**. Tailored specifically for Full-Stack and MERN developers to showcase real-world web apps, REST APIs, and database engineering.
+> Available for Hire & Freelance Projects | Programming Hero Batch 14
+
+**Live Portfolio:** https://fancy-sorbet-478ecc.netlify.app/ **Location:**
+Sylhet, Bangladesh
+
+An ultra-sleek, responsive, production-ready portfolio built with Next.js 15,
+React 19, Tailwind CSS v4, and TypeScript.
 
 ---
 
-## 🌟 Key Features
+## 🚀 Live Links
 
-- **⚡ Modern Tech Stack**: Next.js 15 App Router, React 19, Tailwind CSS v4, TypeScript.
-- **🎨 Glassmorphic & Glowing Dark UI**: High-contrast, radiant gradients, tech grid patterns, and modern typography.
-- **📱 Fully Responsive**: Pixel-perfect layout across mobile, tablet, laptop, and 4K displays.
-- **💻 Interactive Hero Section**:
-  - Availability status badge ("Available for Hire & Freelance Projects")
-  - Live developer config terminal preview
-  - High-impact CTA buttons (*Explore Projects*, *Contact Me*, *Resume*)
-  - Quick performance stats row
-- **🛠️ Technical Competencies & Skills**:
-  - Categorized under *Frontend*, *Backend*, *Databases*, and *Tools & DevOps*
-  - Interactive category filtering with visual mastery bars
-- **📂 Filterable Projects Showcase**:
-  - Filter by *All Projects*, *MERN Stack*, *Full-Stack & Next.js*, and *Backend & APIs*
-  - Includes architecture metrics (*Endpoints*, *Lighthouse Score*, *Stack*)
-  - Direct links to **Live Demo**, **GitHub Client**, and **GitHub Server** repositories
-  - Interactive **Deep-Dive Architecture Modal**
-- **💼 Core Services & Value Proposition**: Full-stack web apps, REST API design, database schema modeling, and performance optimization.
-- **🎓 Journey & Milestones Timeline**: Educational credentials, professional training, and hands-on milestones.
-- **✉️ Working Contact Section**:
-  - Full client-validated contact form connected to `/api/contact`
-  - Direct one-click copy email button
-  - Frequently Asked Questions (FAQ) preview
-- **⚙️ Centralized Configuration**: Easy one-file customization via [`src/data/portfolioData.ts`](./src/data/portfolioData.ts).
+- **Main Portfolio:** https://fancy-sorbet-478ecc.netlify.app/
+- **GitHub:** https://github.com/fahima-codes
+
+---
+
+## 📂 Featured Projects - Real, Live & Deployed
+
+### 1. 📰 BanglaNews-24 - Real-time Bangla News Portal
+
+![BanglaNews-24 Screenshot](/public/banglanews.png)
+
+**Tech Stack:** Next.js 15, TypeScript, Tailwind CSS, Real Data **Features:**
+Category Filtering, Admin Roles, Authentication, Real Bangla Data
+
+- **Live Demo:** https://bangla-news-24-aa-53e9.vercel.app/
+- **GitHub:** https://github.com/fahima-codes/Bangla-News-24
+
+> A real-time news portal - Not a dummy project. Includes login, admin/user
+> roles, and real data.
+
+### 2. 🛠️ DevStack - Build Your Ideal Development Stack
+
+![DevStack Screenshot](/public/devstack.png)
+
+**Tech Stack:** React, TypeScript, Tailwind CSS **Features:** Stack Builder,
+Customization, Modern UI
+
+- **Live Demo:** https://flourishing-cuchufli-3f030b.netlify.app/
+- **GitHub:** https://github.com/fahima-codes/React-Assaingment-5
+
+> Build and customize your ideal development stack with interactive UI.
+
+### 3. 💪 FitLog - Train With Intent
+
+![FitLog Screenshot](/publicfitlog.png)
+
+**Tech Stack:** Next.js, TypeScript, Fitness App **Features:** Workout Logging,
+Progress Tracking
+
+- **Live Demo:** https://my-nextjs-a6-rjtl.vercel.app/
+- **GitHub:** https://github.com/fahima-codes/my-nextjs-a6
+
+> A fitness tracking app to log workouts and train with intent. Mobile
+> responsive.
+
+---
+
+## 🌟 Key Features of This Portfolio
+
+- ⚡ **Modern Tech:** Next.js 15 App Router, React 19, Tailwind v4
+- 🎨 **Design:** Glassmorphic Dark UI, No rounded small image - Full height
+  clean image on right
+- 📱 **Responsive:** Pixel-perfect on mobile, tablet, laptop
+- 💻 **Hero Section:** Left side name/title/description only, Right side full
+  image `/images/saniya.png`
+- 🛠️ **Skills:** Frontend, Backend, Database, Tools with mastery bars
+- 📂 **Projects:** Filterable gallery with real screenshots, Live + GitHub
+  buttons
+- ✉️ **Contact:** Working contact form + direct email copy
 
 ---
 
@@ -36,85 +78,19 @@ An ultra-sleek, responsive, and production-ready portfolio built with **Next.js 
 
 ```text
 my-protfolio/
-├── public/                 # Static assets & icons
+├── public/
+│              # saniya.png, banglanews.png, devstack.png, fitlog.png
 ├── src/
 │   ├── app/
-│   │   ├── api/
-│   │   │   └── contact/    # Contact form API route handler (POST /api/contact)
-│   │   ├── globals.css     # Dark palette, glassmorphism & gradient utilities
-│   │   ├── layout.tsx      # Root layout, metadata & viewport settings
-│   │   └── page.tsx        # Single-page assembled portfolio
+│   │   ├── api/contact/   # POST /api/contact
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
 │   ├── components/
-│   │   ├── icons/          # SVG brand icons (GitHub, LinkedIn, Twitter)
-│   │   ├── Navbar.tsx      # Sticky blur navbar with active scroll indicators
-│   │   ├── Hero.tsx        # Hero with code terminal preview & stats
-│   │   ├── About.tsx       # Bio, philosophy & profile snapshot
-│   │   ├── Skills.tsx      # Interactive skill matrix & proficiency meters
-│   │   ├── Projects.tsx    # Filterable project gallery
-│   │   ├── ProjectModal.tsx# Architecture & case study modal
-│   │   ├── Services.tsx    # Core offerings & deliverables
-│   │   ├── Timeline.tsx    # Experience & education milestones
-│   │   ├── Contact.tsx     # Validated contact form & direct reach-out
-│   │   └── Footer.tsx      # Back-to-top, copyright & social links
+│   │   ├── Hero.tsx       # Fixed: Full image, no round
+│   │   ├── Projects.tsx   # Fixed: Screenshot + Live + GitHub
+│   │   ├── Navbar.tsx, Skills.tsx, Contact.tsx, etc.
 │   └── data/
-│       └── portfolioData.ts# 👈 All portfolio content (edit your info here!)
-├── package.json
-└── tsconfig.json
+│       └── portfolioData.ts # All data here
+└── package.json
 ```
-
----
-
-## 🚀 Getting Started
-
-### 1. Run the Development Server
-
-In PowerShell or command prompt (using `npm.cmd` on Windows if scripts are restricted):
-
-```bash
-npm run dev
-# or
-npm.cmd run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to view your live portfolio.
-
-### 2. Build for Production
-
-```bash
-npm run build
-# or
-npm.cmd run build
-```
-
----
-
-## ✏️ How to Personalize Your Portfolio
-
-All your details, links, projects, and skills are stored in a single file:
-👉 **[`src/data/portfolioData.ts`](./src/data/portfolioData.ts)**
-
-1. **Personal Information**:
-   - Change `name`, `headline`, `location`, `email`, `phone`
-   - Update your social profiles: `githubUrl`, `linkedinUrl`, `twitterUrl`
-   - Replace `resumeUrl` with your actual Google Drive or hosted PDF link
-2. **Projects**:
-   - Update `title`, `description`, `features`, `tags`
-   - Add your own `liveUrl`, `githubClient`, and `githubServer` links
-3. **Skills**:
-   - Tweak skills and percentage proficiency bars according to your comfort level
-4. **Timeline**:
-   - Add your educational background, training batches, and work experience
-
----
-
-## 🚢 Deployment
-
-You can deploy this portfolio for free in under 2 minutes:
-
-- **Vercel** *(Recommended for Next.js)*:
-  1. Push this folder to your GitHub repository.
-  2. Go to [vercel.com](https://vercel.com) and click **"Add New Project"**.
-  3. Import your repository and click **Deploy**.
-- **Netlify / Render**:
-  - Build command: `npm run build`
-  - Output directory: `.next`
