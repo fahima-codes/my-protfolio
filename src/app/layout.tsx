@@ -18,9 +18,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Full-Stack & MERN Developer | Portfolio",
-  description: "Portfolio of a Full-Stack MERN & Next.js Developer. Crafting scalable web applications, robust REST APIs, and delightful responsive user interfaces.",
+  title: "Saniya Fahima | Full-Stack & MERN Developer",
+  description: "Portfolio of Saniya Fahima - Full-Stack MERN & Next.js Developer. Crafting scalable web applications, robust REST APIs, and delightful responsive user interfaces.",
   keywords: [
+    "Saniya Fahima",
     "Full-Stack Developer",
     "MERN Stack",
     "React Developer",
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     "TypeScript",
     "Software Engineer"
   ],
-  authors: [{ name: "Full-Stack Developer" }],
+  authors: [{ name: "Saniya Fahima" }],
 };
 
 export default function RootLayout({

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Project } from "@/data/portfolioData";
 import { GithubIcon } from "@/components/icons/BrandIcons";
 import { X, ExternalLink, CheckCircle2, Layers, Cpu, Database } from "lucide-react";
@@ -36,11 +37,21 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+          className="absolute top-5 right-5 p-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors z-20"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
+
+        {/* Modal Screenshot Banner */}
+        <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 border border-slate-800">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover object-top"
+          />
+        </div>
 
         {/* Header */}
         <div className="space-y-2 pr-8">
@@ -136,15 +147,15 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               <ExternalLink className="w-4 h-4" />
             </a>
           )}
-          {project.githubClient && (
+          {(project.githubUrl || project.githubClient) && (
             <a
-              href={project.githubClient}
+              href={project.githubUrl || project.githubClient}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors"
             >
               <GithubIcon className="w-4 h-4" />
-              <span>Client Repo</span>
+              <span>GitHub Repository</span>
             </a>
           )}
           {project.githubServer && (

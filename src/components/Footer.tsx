@@ -27,7 +27,7 @@ export default function Footer() {
               {personal.name}
             </a>
             <p className="text-xs text-slate-400 font-mono">
-              Full-Stack / MERN Developer • Dhaka, Bangladesh
+              Full-Stack / MERN Developer • {personal.location}
             </p>
           </div>
 

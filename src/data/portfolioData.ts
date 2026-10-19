@@ -9,6 +9,7 @@ export interface Project {
   features: string[];
   metrics?: { label: string; value: string }[];
   liveUrl?: string;
+  githubUrl?: string;
   githubClient?: string;
   githubServer?: string;
   featured: boolean;
@@ -29,12 +30,15 @@ export interface SkillCategory {
 
 export interface ExperienceItem {
   year: string;
-  role: string;
-  organization: string;
-  location: string;
-  description: string[];
-  badge: string;
-  type: "work" | "education" | "achievement";
+  title: string;
+  institution: string;
+  description: string;
+  type: "education" | "training" | "work";
+  status: "Running" | "Completed" | string;
+  role?: string;
+  organization?: string;
+  location?: string;
+  badge?: string;
 }
 
 export interface ServiceItem {
@@ -62,7 +66,7 @@ export const portfolioData = {
     location: "Sylhet, Bangladesh",
     email: "fahimasaniya8@gmail.com",
     phone: "+880 1924-018106",
-    avatar: "/saniya.jpg",
+    avatar: "/images/saniya.png",
     resumeUrl: "#contact",
     githubUrl: "https://github.com/fahima-codes",
     linkedinUrl: "https://linkedin.com",
@@ -145,134 +149,79 @@ export const portfolioData = {
 
   projects: [
     {
-      id: "bazardor-market",
-      title: "BazarDor - Multivendor Marketplace",
-      subtitle: "Full-Stack MERN Platform with Real-time Inventory & Order Management",
-      description: "A comprehensive e-commerce marketplace empowering local vendors and buyers. Features seamless item cataloging, price tracking, secure checkout flows, and dynamic vendor dashboards.",
-      detailedDescription: "Built with React, Node.js, Express, and MongoDB. Includes role-based access control (Admin, Vendor, Customer), image asset management, search filtering with pagination, and comprehensive order history tracking.",
-      category: "MERN",
-      tags: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "JWT Auth"],
-      features: [
-        "Multi-role user authentication with JWT & HTTP-only cookies",
-        "Dynamic product catalog with faceted search, category filtering & sort",
-        "Vendor dashboard for inventory management and order fulfillment",
-        "Responsive, mobile-optimized cart & checkout system",
-        "REST API backend with comprehensive input sanitization and error handling"
-      ],
-      metrics: [
-        { label: "Endpoints", value: "24+ APIs" },
-        { label: "Performance", value: "98 Lighthouse" },
-        { label: "Architecture", value: "MERN Stack" }
-      ],
-      liveUrl: "https://example.com/bazardor",
-      githubClient: "https://github.com",
-      githubServer: "https://github.com",
-      featured: true,
-      image: "bazardor"
-    },
-    {
-      id: "bangla-news-portal",
-      title: "Bangla News 24 - Digital Media Portal",
-      subtitle: "High-Traffic News Platform with App Router & Next.js SSR",
-      description: "A lightning-fast digital media publication built with Next.js, featuring breaking news ticker, categorized journalism feeds, editorial CMS, and social sharing capabilities.",
-      detailedDescription: "Leverages Next.js App Router with Server-Side Rendering (SSR) and Incremental Static Regeneration (ISR) for optimal SEO and instant page delivery. Uses MongoDB for article indexing and Better-Auth for editorial credentials.",
+      id: "banglanews-24",
+      title: "BanglaNews-24",
+      subtitle: "High-Performance Digital Media Portal with Next.js 15 & SSR",
+      description: "A fast, responsive digital media publication featuring breaking news feeds, categorized journalism, editorial publishing, and optimized reading layouts.",
+      detailedDescription: "Leverages Next.js 15 App Router with Server-Side Rendering (SSR) for optimal SEO and rapid page delivery. Features responsive reading layouts, breaking news tickers, editorial categories, and clean TypeScript architecture.",
       category: "Full Stack",
-      tags: ["Next.js", "React 19", "Tailwind CSS", "MongoDB", "Better-Auth", "TypeScript"],
+      tags: ["Next.js 15", "TypeScript", "Tailwind"],
       features: [
         "Server-rendered news feeds optimized for rapid search engine indexing",
         "Real-time breaking news ticker with automated update polling",
         "Categorized editorial sections (Politics, Tech, Sports, Economy)",
-        "Editorial CMS for authoring, publishing, and archiving articles",
-        "Responsive grid layout designed for mobile readability"
+        "Mobile-first responsive design tailored for smooth reading"
       ],
       metrics: [
+        { label: "Framework", value: "Next.js 15" },
         { label: "Rendering", value: "SSR / ISR" },
-        { label: "SEO Score", value: "100/100" },
-        { label: "Page Speed", value: "<0.8s FCP" }
+        { label: "Styling", value: "Tailwind CSS" }
       ],
-      liveUrl: "https://example.com/banglanews",
-      githubClient: "https://github.com",
-      githubServer: "https://github.com",
+      liveUrl: "https://bangla-news-24-aa-53e9.vercel.app/",
+      githubUrl: "https://github.com/fahima-codes/Bangla-News-24",
+      githubClient: "https://github.com/fahima-codes/Bangla-News-24",
       featured: true,
-      image: "newsportal"
+      image: "/images/banglanews.png"
     },
     {
-      id: "user-management-core",
-      title: "UserHub - Enterprise Auth & Role Engine",
-      subtitle: "Production-grade MERN User Management & Access Control",
-      description: "A modular, enterprise-ready authentication and user administration system with JWT tokens, refresh token rotation, bcrypt password hashing, and role permission matrices.",
-      detailedDescription: "Features a clean React client paired with an Express.js server and MongoDB. Demonstrates rock-solid CRUD mechanics, account activity logs, secure session invalidation, and custom middleware guards.",
-      category: "MERN",
-      tags: ["MongoDB", "Express.js", "React", "Node.js", "JWT", "Bcrypt"],
+      id: "devstack",
+      title: "DevStack - Build Your Ideal Development Stack",
+      subtitle: "Interactive Tech Stack Selection & Comparison Tool",
+      description: "An intuitive developer toolkit to configure, compare, and assemble optimal frontend, backend, database, and tooling architectures for modern web projects.",
+      detailedDescription: "Engineered with React, TypeScript, and Tailwind CSS. Features dynamic technology filtering, interactive stack comparison matrices, category breakdowns, and exportable stack configuration blueprints.",
+      category: "Frontend",
+      tags: ["React", "TypeScript", "Tailwind"],
       features: [
-        "Full CRUD user operations with instant client UI reactivity",
-        "Dual-token authentication (Access Token + Refresh Token flow)",
-        "Role-Based Access Control (Admin, Moderator, Standard Member)",
-        "Form validation with real-time feedback and server response alerts",
-        "Audit trail tracking account creation, updates, and logins"
+        "Interactive technology comparison across frontend, backend, and databases",
+        "Faceted category filtering with real-time state management",
+        "Responsive, modern user interface with dark/light visual cues",
+        "Clean, type-safe codebase adhering to modular React principles"
       ],
       metrics: [
-        { label: "Security", value: "Bcrypt + JWT" },
-        { label: "Validation", value: "100% Sanitized" },
-        { label: "Design", value: "Dark / Light Mode" }
+        { label: "Architecture", value: "React + TS" },
+        { label: "Styling", value: "Tailwind" },
+        { label: "State", value: "Reactive Hooks" }
       ],
-      liveUrl: "https://example.com/userhub",
-      githubClient: "https://github.com",
-      githubServer: "https://github.com",
+      liveUrl: "https://flourishing-cuchufli-3f030b.netlify.app/",
+      githubUrl: "https://github.com/fahima-codes/React-Assaingment-5",
+      githubClient: "https://github.com/fahima-codes/React-Assaingment-5",
       featured: true,
-      image: "userhub"
+      image: "/images/devstack.png"
     },
     {
-      id: "dev-pulse-forum",
-      title: "DevPulse - Collaborative Developer Forum",
-      subtitle: "Community Discussion Platform with Markdown & Upvoting",
-      description: "A community platform where developers post coding questions, share insights, upvote technical solutions, and interact with syntax-highlighted code snippets.",
-      detailedDescription: "Built with React, Node.js, Express, and MongoDB. Includes markdown post creation, comment threads, user profiles with reputation points, and tag-based searching.",
+      id: "fitlog",
+      title: "FitLog - Train With Intent",
+      subtitle: "Modern Fitness & Workout Tracking Application",
+      description: "A dark-themed fitness companion application designed to log daily workouts, record sets and reps, track muscle group progression, and maintain training consistency.",
+      detailedDescription: "Built with Next.js and Tailwind CSS. Provides an intuitive workout library, session loggers, routine builders, and comprehensive exercise tracking with responsive mobile-ready interfaces.",
       category: "Full Stack",
-      tags: ["React", "Express", "Node.js", "MongoDB", "Markdown", "Tailwind CSS"],
+      tags: ["Next.js", "Fitness App"],
       features: [
-        "Rich markdown editor with live preview and code syntax highlighting",
-        "Threaded discussions and nested reply capability",
-        "Reputation system with upvoting and accepted answer badges",
-        "Instant filtering by technology tags and popularity metrics",
-        "User profile pages with public contribution history"
+        "Workout routine logger with sets, repetitions, and rest intervals",
+        "Interactive exercise library covering major muscle groups",
+        "Dark-mode interface optimized for gym environments",
+        "Fast client navigation and resilient state persistence"
       ],
       metrics: [
-        { label: "Real-time", value: "Socket Alerts" },
-        { label: "Markdown", value: "Full GFMD" },
-        { label: "Database", value: "Optimized Indexes" }
+        { label: "Stack", value: "Next.js" },
+        { label: "Category", value: "Fitness App" },
+        { label: "Design", value: "Dark Theme" }
       ],
-      liveUrl: "https://example.com/devpulse",
-      githubClient: "https://github.com",
-      githubServer: "https://github.com",
-      featured: false,
-      image: "devpulse"
-    },
-    {
-      id: "crud-api-suite",
-      title: "RapidREST - Microservice API Starter",
-      subtitle: "High-Performance Express & MongoDB Backend Starter",
-      description: "A clean, modular REST API boilerplate built with Node.js and Express. Features centralized error handling, custom validation middleware, Postman test suites, and MongoDB aggregation pipelines.",
-      detailedDescription: "Designed as an industry-standard template for scalable microservices. Contains CORS configuration, environment variable validation, Winston logging, and comprehensive route test cases.",
-      category: "Backend",
-      tags: ["Node.js", "Express", "MongoDB", "Postman", "REST API", "Clean Architecture"],
-      features: [
-        "Modular MVC architecture (Models, Controllers, Routes, Middleware)",
-        "Centralized error handling middleware with custom AppError class",
-        "Production-ready environment config and MongoDB connection pooling",
-        "Complete Postman collection with automated test scripts",
-        "Rate limiting, Helmet HTTP security headers, and CORS rules"
-      ],
-      metrics: [
-        { label: "Architecture", value: "MVC Pattern" },
-        { label: "Test Coverage", value: "Postman Suite" },
-        { label: "Response", value: "<15ms avg" }
-      ],
-      liveUrl: "https://example.com/rapidrest",
-      githubClient: "https://github.com",
-      githubServer: "https://github.com",
-      featured: false,
-      image: "api"
+      liveUrl: "https://my-nextjs-a6-rjtl.vercel.app/",
+      githubUrl: "https://github.com/fahima-codes/my-nextjs-a6",
+      githubClient: "https://github.com/fahima-codes/my-nextjs-a6",
+      featured: true,
+      image: "/images/fitlog.png"
     }
   ] as Project[],
 
@@ -305,42 +254,28 @@ export const portfolioData = {
 
   timeline: [
     {
-      year: "2024 - Present",
-      role: "Full-Stack / MERN Developer",
-      organization: "Independent & Open Source Projects",
-      location: "Dhaka, Bangladesh",
-      description: [
-        "Developing scalable MERN web applications, e-commerce solutions, and digital publishing platforms.",
-        "Architecting RESTful APIs using Express, Node.js, and MongoDB with secure token-based authentication.",
-        "Building modern responsive user interfaces with Next.js App Router, React 19, and Tailwind CSS."
-      ],
-      badge: "Full-Stack Development",
-      type: "work"
+      year: "2026 - Present",
+      title: "Alim",
+      institution: "Shahjalal Jamia Islamia Kamil Madrasa, Pathantula, Sylhet",
+      description: "Currently studying Alim 1st Year, Arabic Department. Session 2025-26, Exam 2027.",
+      type: "education",
+      status: "Running"
     },
     {
-      year: "2023 - 2024",
-      role: "Specialized Full-Stack Web Development Program",
-      organization: "MERN Stack Professional Certification",
-      location: "Online / Practical Academy",
-      description: [
-        "Completed rigorous hands-on curriculum covering JavaScript ES6+, React, Node.js, Express, MongoDB, and Git.",
-        "Delivered over 12 comprehensive milestone assignments and collaborative team projects.",
-        "Mastered state management, async programming, database indexing, and deployment pipelines."
-      ],
-      badge: "MERN Certification",
-      type: "education"
+      year: "2026 - Present",
+      title: "Complete Web Development - Batch 14",
+      institution: "Programming Hero",
+      description: "Learning MERN Stack - React 19, Next.js 15, TypeScript, Node.js, MongoDB. Projects: BanglaNews-24, DevStack, FitLog.",
+      type: "training",
+      status: "Running"
     },
     {
-      year: "2020 - 2024",
-      role: "Bachelor's Studies in Computer Science / Engineering",
-      organization: "University Studies",
-      location: "Bangladesh",
-      description: [
-        "Studied Object-Oriented Programming, Data Structures & Algorithms, Database Management Systems, and Software Engineering principles.",
-        "Active participant in programming problem solving and developer communities."
-      ],
-      badge: "Academic Foundation",
-      type: "education"
+      year: "2025",
+      title: "Dakhil",
+      institution: "Shahjalal Jamia Islamia Kamil Madrasa, Pathantula, Sylhet",
+      description: "Completed Dakhil in 2025 from Bangladesh Madrasah Education Board.",
+      type: "education",
+      status: "Completed"
     }
   ] as ExperienceItem[],
 
